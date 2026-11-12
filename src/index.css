@@ -1,0 +1,278 @@
+@import "@fontsource/ibm-plex-mono/latin-400.css";
+@font-face {
+  font-family: "Manrope Variable";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 200 800;
+  src: url("@fontsource-variable/manrope/files/manrope-latin-wght-normal.woff2")
+    format("woff2");
+}
+@font-face {
+  font-family: "DM Sans Variable";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 1000;
+  src: url("@fontsource-variable/dm-sans/files/dm-sans-latin-wght-normal.woff2")
+    format("woff2");
+}
+
+:root {
+  font-family: "DM Sans Variable", sans-serif;
+  color: #12151b;
+  background: #f5f3ee;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  --ivory: #f5f3ee;
+  --ink: #12151b;
+  --blue: #315cff;
+  --muted: #62666c;
+  --line: #d8d8d2;
+  --heading: "Manrope Variable", sans-serif;
+  --mono: "IBM Plex Mono", monospace;
+}
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-padding-top: 110px;
+  overflow-x: clip;
+}
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+body {
+  margin: 0;
+  min-width: 320px;
+  overflow-x: clip;
+}
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+button,
+a,
+input,
+select,
+textarea {
+  -webkit-tap-highlight-color: transparent;
+}
+button,
+a {
+  touch-action: manipulation;
+}
+button {
+  cursor: pointer;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+button {
+  color: inherit;
+}
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
+}
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--heading);
+}
+h1,
+h2 {
+  font-weight: 550;
+  letter-spacing: -0.065em;
+  line-height: 1.08;
+}
+h3 {
+  letter-spacing: -0.035em;
+  font-weight: 600;
+}
+p {
+  line-height: 1.7;
+}
+img {
+  max-width: 100%;
+  display: block;
+}
+button {
+  border: 0;
+}
+::selection {
+  background: var(--blue);
+  color: white;
+}
+:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 5px;
+}
+main:focus {
+  outline: none;
+}
+main {
+  min-height: 60vh;
+}
+.shell {
+  width: calc(100% - 112px);
+  max-width: 1328px;
+  margin-inline: auto;
+}
+.section {
+  padding-block: 96px;
+}
+.mono,
+.section-label {
+  font-family: var(--mono);
+  font-size: 10px;
+  line-height: 1.6;
+  letter-spacing: 0.07em;
+}
+.blue {
+  color: var(--blue);
+}
+.muted {
+  color: #797c80;
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+.skip-link {
+  position: fixed;
+  left: 16px;
+  top: -100px;
+  z-index: 100;
+  background: var(--blue);
+  color: white;
+  padding: 14px 20px;
+}
+.skip-link:focus {
+  top: 10px;
+}
+.section-label {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: #575b61;
+  letter-spacing: 0.08em;
+}
+.label-dot {
+  height: 6px;
+  width: 6px;
+  background: var(--blue);
+  flex-shrink: 0;
+}
+.section-label.light-label {
+  color: #b8bdc5;
+}
+.arrow {
+  flex-shrink: 0;
+  transition: transform 0.22s;
+}
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  min-height: 52px;
+  padding: 15px 22px;
+  background: var(--blue);
+  color: white;
+  font-size: 13px;
+  font-weight: 550;
+  border: 1px solid var(--blue);
+  transition:
+    background 0.2s,
+    transform 0.2s;
+}
+.button:hover {
+  background: #2048e8;
+  transform: translateY(-2px);
+}
+.button:hover .arrow,
+.text-link:hover .arrow {
+  transform: translate(3px, -3px);
+}
+.text-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 22px;
+  font-size: 13px;
+  font-weight: 550;
+  padding-block: 10px;
+  border-bottom: 1px solid currentColor;
+  min-height: 44px;
+}
+.button:disabled {
+  opacity: 0.7;
+  cursor: wait;
+}
+.back-link {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  font-size: 13px;
+}
+.back-link:hover {
+  color: var(--blue);
+}
+@media (min-width: 1600px) {
+  .shell {
+    width: calc(100% - 160px);
+  }
+}
+@media (max-width: 1100px) {
+  .shell {
+    width: calc(100% - 64px);
+  }
+  .section {
+    padding-block: 76px;
+  }
+}
+@media (max-width: 600px) {
+  .shell {
+    width: calc(100% - 40px);
+  }
+  .section {
+    padding-block: 60px;
+  }
+  .mono,
+  .section-label {
+    font-size: 9px;
+  }
+  .button {
+    min-height: 50px;
+    padding: 14px 18px;
+    font-size: 12px;
+    gap: 20px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
